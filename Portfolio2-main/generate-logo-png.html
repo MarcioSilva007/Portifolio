@@ -1,0 +1,30 @@
+<!-- Script para gerar PNG da logo -->
+<canvas id="logoCanvas" width="400" height="400" style="display: none;"></canvas>
+<script>
+  // Gerar PNG da logo para meta tags
+  const canvas = document.getElementById('logoCanvas');
+  const ctx = canvas.getContext('2d');
+  
+  // Gradiente
+  const gradient = ctx.createLinearGradient(0, 0, 400, 400);
+  gradient.addColorStop(0, '#00bcd4');
+  gradient.addColorStop(1, '#0097a7');
+  
+  // Fundo arredondado
+  ctx.fillStyle = gradient;
+  ctx.roundRect(0, 0, 400, 400, 88);
+  ctx.fill();
+  
+  // Texto MG
+  ctx.fillStyle = 'white';
+  ctx.font = 'bold 144px system-ui, -apple-system, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('MG', 200, 200);
+  
+  // Download
+  const link = document.createElement('a');
+  link.download = 'logo.png';
+  link.href = canvas.toDataURL();
+  link.click();
+</script>
