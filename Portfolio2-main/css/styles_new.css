@@ -1109,12 +1109,18 @@ img {
 }
 
 /* Projetos em destaque com mais profissionalismo */
-.projects { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-  gap: var(--space-xl);
-  margin-top: var(--space-2xl);
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
+
+@media (min-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 
 .project {
   transition: var(--transition-normal);
