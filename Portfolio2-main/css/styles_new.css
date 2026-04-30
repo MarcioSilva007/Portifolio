@@ -1111,15 +1111,22 @@ img {
 /* Projetos em destaque com mais profissionalismo */
 .projects {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr;   /* mobile: uma coluna */
   gap: 20px;
 }
 
 @media (min-width: 768px) {
   .projects {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* tablet/desktop: duas colunas */
   }
 }
+
+@media (min-width: 1200px) {
+  .projects {
+    grid-template-columns: 1fr 1fr 1fr; /* telas grandes: três colunas */
+  }
+}
+
 
 
 .project {
